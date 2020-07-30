@@ -1,6 +1,7 @@
 import React from "react"
 import WelcomeScreen from "./WelcomeScreen.jsx"
 import RoundSetup from "./RoundSetup.jsx"
+import DistanceFinder from './DistanceFinder.jsx'
 
 
 class App extends React.Component {
@@ -29,6 +30,7 @@ render(){
     return(
         <div>
         {this.renderView()}
+        <DistanceFinder/>
        </div>
     )
 }

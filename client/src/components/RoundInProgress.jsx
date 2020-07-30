@@ -7,7 +7,7 @@ constructor(props){
     super(props);
     this.state = {
        view:"score",
-       score:0
+       score:''
      }
      this.handleClick = this.handleClick.bind(this);
      this.handleNextHole = this.handleNextHole.bind(this);
@@ -25,7 +25,7 @@ handleNextHole(){
      this.props.round.push(holeResult)
         
         this.props.alterState('currentHole',this.props.hole+1)
-        this.setState({"score":0})
+        this.setState({"score":''})
     }
 }
 handleClick(value){
