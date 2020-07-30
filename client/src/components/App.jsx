@@ -1,5 +1,7 @@
 import React from "react"
 import WelcomeScreen from "./WelcomeScreen.jsx"
+import RoundSetup from "./RoundSetup.jsx"
+import DistanceFinder from './DistanceFinder.jsx'
 
 
 class App extends React.Component {
@@ -16,7 +18,7 @@ renderView(){
    if(this.state.view==="welcome screen"){
        return <WelcomeScreen changeView = {this.changeView}/>
    }else if( this.state.view = "round setup"){
-       return <div>round setup goes here</div>
+       return <RoundSetup/>
    }
 }
 changeView(view){
@@ -28,6 +30,7 @@ render(){
     return(
         <div>
         {this.renderView()}
+        <DistanceFinder/>
        </div>
     )
 }

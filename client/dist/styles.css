@@ -1,0 +1,104 @@
+.scoreSelection{
+  font-size: 20px; 
+}
+.scoreSelection:hover{
+  cursor: pointer;
+}
+
+#scoreSelector{
+    display:grid;
+    grid-template-rows: 20px 20px 20px 20px 20px;
+    grid-template-columns: 20px 30px 30px 30px 30px;
+}
+
+.scoreSelection1{
+    display:grid;
+    grid-row: 1 ;
+    grid-column: 2;  
+}
+.scoreSelection1:hover{
+ cursor: pointer;
+ font-size:23px;
+ color:green;
+}
+.scoreSelection2{
+    display:grid;
+    grid-row: 1 ;
+    grid-column: 3;  
+}
+.scoreSelection2:hover{
+ cursor: pointer;
+ font-size:23px;
+ color:green;
+}
+.scoreSelection3{
+    display:grid;
+    grid-row: 1 ;
+    grid-column: 4;  
+}
+.scoreSelection3:hover{
+ cursor: pointer;
+ font-size:23px;
+ color:green;
+}
+.scoreSelection4{
+    display:grid;
+    grid-row: 2 ;
+    grid-column: 2;  
+}
+.scoreSelection4:hover{
+ cursor: pointer;
+ font-size:23px;
+ color:green;
+}
+.scoreSelection5{
+    display:grid;
+    grid-row: 2 ;
+    grid-column: 3;  
+}
+.scoreSelection5:hover{
+ cursor: pointer;
+ font-size:23px;
+ color:green;
+}
+.scoreSelection6{
+    display:grid;
+    grid-row: 2 ;
+    grid-column: 4;  
+}
+.scoreSelection6:hover{
+ cursor: pointer;
+ font-size:23px;
+ color:green;
+}
+.scoreSelection7{
+    display:grid;
+    grid-row: 3 ;
+    grid-column: 2;  
+}
+.scoreSelection7:hover{
+ cursor: pointer;
+ font-size:23px;
+ color:green;
+}
+.scoreSelection8{
+    display:grid;
+    grid-row: 3 ;
+    grid-column: 3;  
+   
+}
+.scoreSelection8:hover{
+ cursor: pointer;
+ font-size:23px;
+ color:green;
+}
+.scoreSelection9{
+    display:grid;
+    grid-row: 3 ;
+    grid-column: 4;  
+}
+.scoreSelection9:hover{
+ cursor: pointer;
+ font-size:23px;
+ color:green;
+}
