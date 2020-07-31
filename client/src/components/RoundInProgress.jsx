@@ -1,4 +1,16 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
+import { Button } from '@material-ui/core';
+import { styled } from '@material-ui/core/styles';
+
+const MyPaper = styled(Paper)({
+    background: 'rgb(21, 139, 19)',
+  
+  });
+  const StyledButton = styled(Button)({
+    background: 'rgb(255, 255, 255)'
+});
+
 
 
 class RoundInProgress extends React.Component{
@@ -42,7 +54,7 @@ handleSubmit(){
     this.props.alterState("view","results");
 }
 render(){
-    return <div>
+    return <MyPaper elevation={3} className="paperBin" > <div>
         <h1>Hole {this.props.hole}</h1>
        
 <p>SELECT YOUR SCORE: {this.state.score}</p>
@@ -57,12 +69,15 @@ render(){
         <div className="scoreSelection8" onClick={()=>this.handleClick(8)}>8</div>
         <div className="scoreSelection9" onClick={()=>this.handleClick(9)}>9</div>
         </div>
+      
     
 <div>
-{(this.props.holes18 ? 18 : 9) !== this.props.hole ?<button onClick = {this.handleNextHole}>Next Hole</button>:null}
-{(this.props.holes18 ? 18 : 9) === this.props.hole ?<button onClick = {this.handleSubmit}>Submit</button>:null}
+
+{(this.props.holes18 ? 18 : 9) !== this.props.hole ?<StyledButton onClick = {this.handleNextHole}>Next Hole</StyledButton>:null}
+{(this.props.holes18 ? 18 : 9) === this.props.hole ?<StyledButton onClick = {this.handleSubmit}>Submit</StyledButton>:null}
 </div>
 </div>
+</MyPaper>
 }
 }
 

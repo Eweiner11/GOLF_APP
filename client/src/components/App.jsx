@@ -4,6 +4,7 @@ import RoundSetup from "./RoundSetup.jsx"
 import DistanceFinder from './DistanceFinder.jsx'
 
 
+
 class App extends React.Component {
 constructor(props){
     super(props);
@@ -16,7 +17,7 @@ constructor(props){
 }
 renderView(){
    if(this.state.view==="welcome screen"){
-       return <WelcomeScreen changeView = {this.changeView}/>
+       return <WelcomeScreen changeView = {this.changeView} style ={{ backgroundImage: `url(testImg.png)`,}}/>
    }else if( this.state.view = "round setup"){
        return <RoundSetup/>
    }
@@ -28,12 +29,14 @@ this.setState({'view':view});
 render(){
 
     return(
-        <div>
+        <div className = 'test'>
         {this.renderView()}
-        <DistanceFinder/>
+        {/* <DistanceFinder/>
+         */}
        </div>
     )
 }
 }
+
 
 export default App;

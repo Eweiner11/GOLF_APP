@@ -1,5 +1,16 @@
 import React from "react";
 import RoundInProgress from './RoundInProgress.jsx'
+import { Button } from '@material-ui/core';
+import Paper from '@material-ui/core/Paper';
+import { styled } from '@material-ui/core/styles';
+
+const MyPaper = styled(Paper)({
+    background: 'rgb(21, 139, 19)',
+  
+  });
+  const StyledButton = styled(Button)({
+    background: 'rgb(255, 255, 255)'
+});
 
 class RoundSetup extends React.Component {
   constructor(props) {
@@ -32,8 +43,15 @@ class RoundSetup extends React.Component {
   renderView() {
     if (this.state.view === "round setup") {
       return (
-        <div>
-          <form>
+        <MyPaper elevation={3} className="paperBin" >
+          <div className = "roundSetupGrid">
+          <div className= "roundSetupContainer">
+            <h4 className ="roundSetupTitle">ROUND SETUP</h4>
+          </div>
+          <div className="playerSelectTitle"># OF PLAYERS</div>
+          <div className="holesSelectTitle"># OF HOLES</div>
+          <div className="courseSelectTitle">SELECT COURSE</div>
+          {/* <form>
             <div className="radio">
               <label>
                 <input
@@ -58,13 +76,14 @@ class RoundSetup extends React.Component {
             </div>
           </form>
 
-          <button onClick={() => this.setState({ view: "Round In Progress" })}>
+          <StyledButton variant="outlined" onClick={() => this.setState({ view: "Round In Progress" })}>
             Start Round
-          </button>
-        </div>
+          </StyledButton> */}
+          </div>
+          </MyPaper>
       );
     } else if (this.state.view === "Round In Progress") {
-      return <RoundInProgress alterState={this.alterState} hole ={this.state.currentHole} round ={this.state.round} holes18 ={this.state.holes18}/>; // give props this.state.round this.state.hole this.state.alterState
+      return  <RoundInProgress alterState={this.alterState} hole ={this.state.currentHole} round ={this.state.round} holes18 ={this.state.holes18}/>; // give props this.state.round this.state.hole this.state.alterState
     }else{
       let score=0;
       return <div>
