@@ -1,8 +1,14 @@
 import React from "react"
 import { Button } from '@material-ui/core';
+import { styled } from '@material-ui/core/styles';
 
 import distanceConverter from "./../../helpers/distanceConverter.js"
 
+
+const StyledButton = styled(Button)({
+    background: 'rgb(255, 255, 255)',
+    
+});
 class DistanceFinder extends React.Component{
     constructor(props){
         super(props)
@@ -24,8 +30,8 @@ showPosition(position) {
    }else{
     this.setState({'shotEnd':[position.coords.latitude,position.coords.longitude]},()=>{
         this.setState({'start':true}, ()=> {
-
-            console.log(distanceConverter(this.state.shotStart[0],this.state.shotStart[1],this.state.shotEnd[0],this.state.shotEnd[1]))
+            window.alert(JSON.stringify(this.state))
+            window.alert(` You hit the Ball ${distanceConverter(this.state.shotStart[0],this.state.shotStart[1],this.state.shotEnd[0],this.state.shotEnd[1])} Yards`)
         })
     })
    }
@@ -41,9 +47,9 @@ showPosition(position) {
   }
   
     render(){
-      return  <div>
-            <h4>{ this.state.start ? "Mark Where You're Shot was hit":"Mark Where You're Shot Landed"}</h4>
-        <Button  variant="outlined" onClick = {()=>this.getLocation()} >{ this.state.start ? "Mark Shot Start":"Mark Shot End"}</Button>
+      return  <div className = 'distance'>
+           
+        <StyledButton  variant="outlined" onClick = {()=>this.getLocation()} >{ this.state.start ? "Mark Shot Start":"Mark Shot End"}</StyledButton>
         </div>
     }
 }

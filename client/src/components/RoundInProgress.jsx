@@ -1,6 +1,6 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
-
+import DistanceFinder from "./DistanceFinder.jsx"
 import { Button } from '@material-ui/core';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosTwoToneIcon from '@material-ui/icons/ArrowBackIosTwoTone';
@@ -28,7 +28,14 @@ const MyPaper = styled(Paper)({
   });
 
   const StyledButton = styled(Button)({
-    background: 'rgb(255, 255, 255)'
+    background: 'rgb(255, 255, 255)',
+    display: "grid",
+    gridColumn: "2/4",
+    justifyContent: "center",
+    gridRow: "8",
+    /* width: 100px; */
+    height: "30px"
+
 });
 
 
@@ -40,6 +47,7 @@ constructor(props){
     this.state = {
        view:"score",
        score:0,
+       time:new Date()
       
      }
      this.handleClick = this.handleClick.bind(this);
@@ -98,14 +106,19 @@ handleSubmit(e){
     
     this.props.alterState("view","results");
    }
+   componentDidMount(){
+     console.log(this.state.time[0])
+   }
 render(){
     return <MyPaper elevation={3} className="holeScorerBin" > 
     <div>
          <div className='scoreSelectorGrid'>
+         <DistanceFinder/>
         <h1 className="holeTitle">Hole {this.props.hole}</h1>
         {this.props.hole !== 1 ? <div className='previousButton' ><ArrowBackIosTwoToneIcon onClick={this.handlePrevious}></ArrowBackIosTwoToneIcon></div>:null}
        {this.props.hole !==(this.props.holes18 ? 18 : 9)? <div className='nextButton' onClick={this.handleNextHole}>
-        <ArrowForwardIosIcon ></ArrowForwardIosIcon> </div> : <div onClick ={this.handleSubmit}><ArrowForwardIosIcon ></ArrowForwardIosIcon></div>}
+        
+        <ArrowForwardIosIcon ></ArrowForwardIosIcon> </div> : <div  className = "submit" onClick ={this.handleSubmit}><StyledButton>Submit Round</StyledButton></div>}
         
         <MyPaper2 elevation={3} className="scorePicker">
        
